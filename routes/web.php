@@ -3,6 +3,7 @@
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\DebateController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\PublicacionController;
 use App\Http\Controllers\RepositorioController;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,9 @@ Route::middleware('auth')->group(function(){
     //Repositorio
     Route::get('/repositorio', [RepositorioController::class,'index'])->name('repositorio');
     Route::get('/repositorio/{id}', [RepositorioController::class,'show'])->name('repositorio.show');
+
+    //Perfil
+    Route::get('/profile', [PerfilController::class,'index'])->name('profile');
 });
 
 require __DIR__.'/auth.php';
