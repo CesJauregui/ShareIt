@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $page_title = "Home";
-        return view('index', compact('page_title'));
-    }
+  public function index(Request $request) : View {
+    return view('index');
+  }
 }

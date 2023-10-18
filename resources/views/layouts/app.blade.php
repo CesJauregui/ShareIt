@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-@include('layouts.header')
-@include('layouts.navigation')
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>ShareIt - @yield('title')</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+  <!--Icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <!-- Scripts -->
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- Styles -->
+  @livewireStyles
+</head>
 
-
-  <div class="main-page">
-    <section class="relative mt-64 py-20 bg-blueGray-200">
-      <div class="mx-auto h-350-px ">
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
-          <button type="submit" class="p-2 w-10 h-10 rounded-full text-sm font-medium btn-flotante text-white bg-gray-600 border-gray-700 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" id="btnVoice" onclick="VoiceAssistance()">
-            <i class="fa-solid fa-microphone"></i>
-          </button>
-          <div class="px-6">
-            <div class="flex flex-wrap justify-center">
-              @if($page_title == 'Perfil')
-              <div class="w-full sm:w-full lg:w-3/12 px-4 lg:order-1 justify-center">
-                <div class="relative shadow rounded p-3">
-                  @include('layouts.sidebar')
-                </div>
-                @else
-                <div class="w-full sm:w-full lg:w-3/12 px-4 lg:order-1 justify-center">
-                  <div class="relative shadow rounded p-3 mt-3 hidden lg:block">
-                    @include('layouts.sidebar')
-                  </div>
-                  @endif
-                  <div class="w-full lg:w-3/12 px-4 lg:order-3 hidden lg:block lg:justify-center ">
-                    @include('layouts.sidebar-right')
-                  </div>
-                  <div class="w-full lg:w-6/12 px-0 lg:order-2">
-                    @yield('content')
-                  </div>
-                </div>
-              </div>
+<body class="font-sans antialiased bg-gray-100">
+  <div x-data="setup()" x-init="$refs.loading.classList.add('hidden')" :class="{ 'dark': isDark}" @resize.window="watchScreen()">
+    <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+      <!-- Loading screen -->
+      <div x-ref="loading" class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-indigo-800">
+        Loading.....
+      </div>
+      <button type="submit" class="p-2 w-10 h-10 rounded-full text-sm font-medium btn-flotante text-white bg-gray-600 border-gray-700 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" id="btnVoice" onclick="VoiceAssistance()">
+        <i class="fa-solid fa-microphone"></i>
+      </button>
+      <!-- Sidebar first column -->
+      <!-- Backdrop -->
+      <div x-show="isSidebarOpen" @click="isSidebarOpen = false" class="fixed inset-0 z-10 bg-indigo-800 md:hidden" style="opacity: 0.5" aria-hidden="true"></div>
+      @include('layouts.sidebar-left')
+      <div class="flex flex-1 h-screen overflow-y-scroll">
+        <!-- Main content -->
+        <main class="flex-1">
+          @livewire('navigation-menu')
+          <section class="flex flex-wrap mt-20 justify-center">
+            <div class="lg:w-9/12 px-4">
+              @yield('content')
             </div>
-          </div>
-    </section>
+            <div class="lg:w-3/12 hidden lg:block">
+              @include('layouts.sidebar-right')
+            </div>
+          </section>
+        </main>
+      </div>
+      <!--Panels-->
+      @include('layouts.panels')
+    </div>
   </div>
-  @include('layouts.script')
+  <script src="{{ Vite::asset('resources/js/main.js') }}"></script>
+  @stack('modals')
+  @livewireScripts
 </body>
 
 </html>

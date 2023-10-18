@@ -1,4 +1,4 @@
-  <div class="py-6 px-3  sm:mt-0 shadow rounded mt-3">
+<div class="py-6 px-3  sm:mt-0 shadow rounded">
     <div class="border-b-2 border-blueGray-200">
       <i class="fa-solid fa-handshake"></i> <span class="text-bold">Comunidad</span>
     </div>
