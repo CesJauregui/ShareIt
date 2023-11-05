@@ -12,6 +12,25 @@
 	--darker: #323d49;
 }
 
+
+
+.button__auth {
+	@apply mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white bg-sky-500 transition duration-150 ease-in-out;
+}
+
+.button__auth:hover {
+	--tw-shadow: 0 8px 9px -4px rgba(0, 0, 0, 0.1), 0 4px 18px 0 rgba(0, 0, 0, 0.2);
+	--tw-shadow-colored: 0 8px 9px -4px var(--tw-shadow-color), 0 4px 18px 0 var(--tw-shadow-color);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.container__auth__left{
+	@apply px-4 md:px-0 lg:w-7/12;
+}
+.container__auth__right{
+	@apply items-center rounded-b-lg lg:w-5/12 lg:rounded-r-lg lg:rounded-bl-none bg-white bg-gradient-to-t  hidden md:flex;
+}
+
+
 .dark .dark\:text-light {
 	color: var(--light);
 }
