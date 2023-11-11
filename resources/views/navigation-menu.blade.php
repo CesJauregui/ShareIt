@@ -1,4 +1,4 @@
-<header class="flex items-center justify-between p-4 fixed bg-white dark:bg-darker" style="width: -webkit-fill-available;">
+<header class="flex items-center justify-between p-4 fixed md:ml-16 bg-white dark:bg-darker" style="width: -webkit-fill-available;">
   <div class="flex items-center space-x-4 md:space-x-0">
     <!-- Sidebar button -->
     <button @click="isSidebarOpen = true; $nextTick(() => { $refs.sidebar.focus() })" class="p-1 text-indigo-400 transition-colors duration-200 rounded-md bg-indigo-50 md:hidden hover:text-indigo-600 hover:bg-indigo-100 dark:hover:text-light dark:hover:bg-indigo-700 dark:bg-dark focus:outline-none focus:ring">
@@ -12,7 +12,11 @@
         </svg>
       </span>
     </button>
-    <h1 class="text-2xl font-medium">ShareIt</h1>
+    <div class="flex-shrink-0">
+      <a href="{{ route('home') }}" class="inline-block text-xl font-bold tracking-wider text-indigo-700 uppercase dark:text-light">
+        <x-application-mark class="block h-10 w-auto" />
+      </a>
+    </div>
   </div>
   <div class="space-x-2 flex items-center">
     <!-- Toggle dark theme button -->

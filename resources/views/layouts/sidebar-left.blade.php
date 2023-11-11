@@ -1,10 +1,10 @@
 <aside x-show="isSidebarOpen" x-transition:enter="transition-all transform duration-300 ease-in-out" x-transition:enter-start="-translate-x-full opacity-0" x-transition:enter-end="translate-x-0 opacity-100" x-transition:leave="transition-all transform duration-300 ease-in-out" x-transition:leave-start="translate-x-0 opacity-100" x-transition:leave-end="-translate-x-full opacity-0" x-ref="sidebar" @keydown.escape="window.innerWidth <= 768 ? isSidebarOpen = false : ''" tabindex="-1" class="fixed inset-y-0 z-10 flex flex-shrink-0 bg-white border-r md:static dark:border-indigo-800 dark:bg-darker focus:outline-none">
   <!-- Mini column -->
-  <nav class="flex flex-col flex-shrink-0 h-full px-2 py-4 border-r dark:border-indigo-800">
+  <nav class="flex flex-col flex-shrink-0 h-full px-2 fixed dark:bg-darker bg-white py-4 border-r dark:border-indigo-800">
     <!-- Brand -->
     <div class="flex-shrink-0">
       <a href="{{ route('home') }}" class="inline-block text-xl font-bold tracking-wider text-indigo-700 uppercase dark:text-light">
-        <x-application-mark class="block h-9 w-auto" />
+        <x-application-mark class="invisible h-9 w-auto" />
       </a>
     </div>
     <div class="flex flex-col items-center justify-center flex-1 space-y-4">

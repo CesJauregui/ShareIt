@@ -31,11 +31,11 @@
       <!-- Backdrop -->
       <div x-show="isSidebarOpen" @click="isSidebarOpen = false" class="fixed inset-0 z-10 bg-indigo-800 md:hidden" style="opacity: 0.5" aria-hidden="true"></div>
       @include('layouts.sidebar-left')
-      <div class="flex flex-1 h-screen overflow-y-scroll">
+      <div class="flex flex-1 h-screen">
         <!-- Main content -->
         <main class="flex-1">
           @livewire('navigation-menu')
-          <section class="flex flex-wrap mt-20 justify-center">
+          <section class="flex flex-wrap mt-20 md:ml-16 bg-gray-100 dark:bg-dark dark:text-light justify-center">
             <div class="lg:w-9/12 px-4">
               @yield('content')
             </div>

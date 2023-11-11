@@ -26,8 +26,11 @@ const setup = () => {
           setTheme(this.isDark)
       },
       watchScreen() {
-          if (window.innerWidth <= 768) {
+          if (window.innerWidth < 768) {
               this.isSidebarOpen = false
+              this.isUserPanelOpen = false
+          } else if (window.innerWidth >= 768){
+              this.isSidebarOpen = true
               this.isUserPanelOpen = false
           } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
               this.isSidebarOpen = true
