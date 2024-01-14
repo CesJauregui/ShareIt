@@ -39,7 +39,7 @@
 
         <div class="space-y-4">
           <a href="#" class="flex items-start space-x-2 group">
-            <img class="flex-shrink-0 object-cover w-12 h-12 rounded-full" src="https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/82125466_110587420467089_5876443407655632896_n.jpg?_nc_cat=102&ccb=3&_nc_sid=09cbfe&_nc_ohc=GrzMqB3w0WMAX_PK3hf&_nc_ht=scontent-hbe1-1.xx&oh=a51c1ffff60c83e73c3ef0c9c70afafa&oe=6056CFF5" alt="John Doe" />
+            <img class="flex-shrink-0 object-cover w-12 h-12 rounded-full" src="" alt="John Doe" />
             <div class="overflow-hidden">
               <h4 class="font-semibold text-gray-400 transition-colors dark:text-indigo-700 group-hover:text-gray-900 dark:group-hover:text-indigo-400">
                 John Doe
@@ -54,7 +54,7 @@
               ago</span>
           </a>
           <a href="#" class="flex items-start space-x-2 group">
-            <img class="flex-shrink-0 object-cover w-12 h-12 rounded-full" src="https://pbs.twimg.com/profile_banners/1320412502195306496/1603647296/1500x500" alt="John Doe" />
+            <img class="flex-shrink-0 object-cover w-12 h-12 rounded-full" src="" alt="John Doe" />
             <div class="overflow-hidden">
               <h4 class="font-semibold text-gray-400 transition-colors dark:text-indigo-700 group-hover:text-gray-900 dark:group-hover:text-indigo-400">
                 Someone
@@ -75,13 +75,13 @@
     <footer class="flex items-center justify-between flex-shrink-0 px-4 py-2 border-t dark:border-indigo-800">
       <div class="text-sm">
         View on
-        <a href="https://github.com/Kamona-WD/kwd-dashboard" target="_blank" class="text-blue-500 hover:underline">
+        <a href="" target="_blank" class="text-blue-500 hover:underline">
           github
         </a>
       </div>
       <div class="text-sm">
         Made by
-        <a href="https://github.com/Kamona-WD" target="_blank" class="text-blue-500 hover:underline">
+        <a href="" target="_blank" class="text-blue-500 hover:underline">
           Ahmed Kamel
         </a>
       </div>

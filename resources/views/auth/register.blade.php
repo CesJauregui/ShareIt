@@ -1,4 +1,4 @@
 <x-guest-layout>
-  <x-authentication-card type="register">
-  </x-authentication-card>
+  <x-auth.authentication-card type="register">
+  </x-auth.authentication-card>
 </x-guest-layout>

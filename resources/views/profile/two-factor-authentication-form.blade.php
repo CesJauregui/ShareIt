@@ -80,7 +80,7 @@
             @if (! $this->enabled)
                 <x-confirms-password wire:then="enableTwoFactorAuthentication">
                     <x-button type="button" wire:loading.attr="disabled">
-                        {{ __('Enable') }}
+                        <x-slot:buttonName>{{ __('Enable') }}</x-slot>
                     </x-button>
                 </x-confirms-password>
             @else

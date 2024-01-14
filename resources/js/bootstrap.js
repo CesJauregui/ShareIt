@@ -30,3 +30,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
+
+// import Echo from "laravel-echo";
+// import Pushers from 'pusher-js';
+// window.Pusher = Pushers;
+
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     //key: process.env.VITE_PUSHER_APP_KEY,
+//     key: import.meta.env.VITE_PUSHER_APP_KEY,
+//     wsHost: window.location.hostname,
+//     wsPort: 6001,
+//     forceTLS: false,
+//     disableStats: true,
+//     cluster:import.meta.env.VITE_PUSHER_APP_CLUSTER
+// });

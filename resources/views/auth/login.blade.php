@@ -1,4 +1,4 @@
 <x-guest-layout>
-  <x-authentication-card type="login">
-  </x-authentication-card>
+  <x-auth.authentication-card type="login">
+  </x-auth.authentication-card>
 </x-guest-layout>

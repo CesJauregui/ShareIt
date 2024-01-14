@@ -35,12 +35,14 @@
         <!-- Main content -->
         <main class="flex-1">
           @livewire('navigation-menu')
-          <section class="flex flex-wrap mt-20 md:ml-16 bg-gray-100 dark:bg-dark dark:text-light justify-center">
+          <section class="flex flex-wrap mt-24 md:ml-16 bg-gray-100 dark:bg-dark dark:text-light justify-center">
             <div class="lg:w-9/12 px-4">
               @yield('content')
             </div>
             <div class="lg:w-3/12 hidden lg:block">
-              @include('layouts.sidebar-right')
+              @section('sidebar-right')
+                @include('layouts.sidebar-right')
+              @show
             </div>
           </section>
         </main>
@@ -50,6 +52,8 @@
     </div>
   </div>
   <script src="{{ Vite::asset('resources/js/main.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+  <script src="{{ asset('js/chatify/code.js') }}"></script>
   @stack('modals')
   @livewireScripts
 </body>

@@ -101,17 +101,23 @@
 
                     <!--Register/Login button-->
                     @if($attributes['type']=='register')
-                    <x-button>
-                      <x-slot:text>¿Ya tienes una cuenta?</x-slot>
-                        <x-slot:url>{{ route('login') }}</x-slot>
-                          <x-slot:buttonName>Login</x-slot>
-                    </x-button>
+                    <div class="flex items-center justify-between pb-6">
+                      <p class="mb-0 mr-2">¿Ya tienes una cuenta?</p>
+                      <a href="{{ route('login') }}">
+                        <x-button>
+                            <x-slot:buttonName>Login</x-slot>
+                        </x-button>
+                      </a>
+                    </div>
                     @else
-                    <x-button>
-                      <x-slot:text>¿No tienes una cuenta?</x-slot>
-                        <x-slot:url>{{ route('register') }}</x-slot>
-                          <x-slot:buttonName>Regirtrarse</x-slot>
-                    </x-button>
+                    <div class="flex items-center justify-between pb-6">
+                      <p class="mb-0 mr-2">¿No tienes una cuenta?</p>
+                      <a href="{{ route('register') }}">
+                        <x-button>
+                            <x-slot:buttonName>Regirtrarse</x-slot>
+                        </x-button>
+                      </a>
+                    </div>
                     @endif
                   </form>
               </div>

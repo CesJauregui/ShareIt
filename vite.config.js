@@ -7,7 +7,11 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/main.js'
+                'resources/js/main.js',
+                'resources/js/chat.js',
+                'resources/js/chatify/font.awesome.min.js',
+                'resources/js/chatify/autosize.js',
+                'resources/css/chatify/style.css',
             ],
             refresh: [
                 ...refreshPaths,

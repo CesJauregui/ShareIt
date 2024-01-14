@@ -8,11 +8,10 @@
 
 :root {
 	--light: #edf2f9;
-	--dark: #18212c;
-	--darker: #323d49;
+	--dark: #131518;
+	--darker: #1d2227;
+	background-color: var(--dark);
 }
-
-
 
 .button__auth {
 	@apply mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white bg-sky-500 transition duration-150 ease-in-out;
@@ -23,13 +22,114 @@
 	--tw-shadow-colored: 0 8px 9px -4px var(--tw-shadow-color), 0 4px 18px 0 var(--tw-shadow-color);
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.container__auth__left{
+
+.container__auth__left {
 	@apply px-4 md:px-0 lg:w-7/12;
 }
-.container__auth__right{
-	@apply items-center rounded-b-lg lg:w-5/12 lg:rounded-r-lg lg:rounded-bl-none bg-white bg-gradient-to-t  hidden md:flex;
+
+.container__auth__right {
+	@apply items-center rounded-b-lg lg:w-5/12 lg:rounded-r-lg lg:rounded-bl-none bg-white bg-gradient-to-t hidden md:flex;
 }
 
+.newpost{
+	@apply p-4 flex space-x-2 shadow rounded lg:w-10/12 mx-auto w-full bg-white  dark:bg-darker;
+}
+
+.newpost__input{
+	@apply mt-1 px-2 py-2 bg-gray-100 dark:bg-dark border shadow-sm border-none placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-9/12 sm:text-sm focus:ring-0 italic rounded-lg;
+}
+
+.post{
+	@apply p-4 my-4 shadow rounded mx-auto lg:w-10/12 bg-white dark:bg-darker;
+}
+
+.post__header{
+	@apply flex items-center;
+}
+
+.post__content{
+	@apply my-2;
+}
+
+.post__reactions{
+	@apply my-2 border-t border-gray-200;
+}
+
+.post__comment{
+	@apply mt-2;
+}
+
+.post__comment-form{
+	@apply flex items-center w-full my-2 border px-3 justify-between border-none;
+}
+
+.post__comment-photo{
+	@apply mr-2 h-7 w-9 rounded-full my-3;
+}
+
+.post__comment-input {
+	@apply w-full text-sm text-gray-900 rounded-lg px-3 bg-white border-0 dark:bg-dark focus:ring-0 dark:text-light dark:placeholder-gray-400 resize-none overflow-visible bg-scroll;
+}
+
+.post__comment-input--focus{
+	@apply focus:h-12;
+}
+
+.post__comment-icon {
+	@apply inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600;
+}
+
+.msg{
+	@apply flex flex-col space-y-2 text-xs max-w-xs mx-2;
+}
+
+.msg-block-left{
+	@apply flex items-end;
+}
+
+.msg-block-right{
+	@apply flex items-end justify-end;
+}
+
+.left-msg{
+	@apply order-2 items-start;
+}
+
+.right-msg{
+	@apply order-1 items-end justify-end;
+}
+
+.msg-text{
+	@apply px-4 py-2 rounded-lg inline-block;
+}
+
+.msg-text-left{
+	@apply bg-white dark:bg-darker dark:text-light items-center;
+}
+
+.msg-text-right{
+	@apply bg-blue-600 text-white;
+}
+
+.msg-img-left{
+	@apply w-6 h-6 rounded-full order-1;
+}
+
+.msg-img-right{
+	@apply w-6 h-6 rounded-full order-2;
+}
+
+.date{
+	@apply text-[10px] text-gray-400 p-0 m-0 flex;
+}
+
+.date-right{
+	@apply justify-start;
+}
+
+.date-left{
+	@apply justify-start;
+}
 
 .dark .dark\:text-light {
 	color: var(--light);
